@@ -1,0 +1,4 @@
+- hosts: localhost
+  roles:
+#    - monitoring/install_netdata
+    - common/install_ansible
