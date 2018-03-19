@@ -1,0 +1,9 @@
+- hosts: localhost
+  roles:
+#    - monitoring/install_netdata
+    - common/commons
+    - common/install_ansible
+  vars_files:
+    - cloudgrage/vars.yml
+
+
