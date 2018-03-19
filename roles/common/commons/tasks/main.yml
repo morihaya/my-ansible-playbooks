@@ -6,6 +6,14 @@
   notify:
     - restart sshd
 
+- name: Disable login with password only for root user
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PermitRootLogin'
+    line: 'PermitRootLogin without-password'
+  notify:
+    - restart sshd
+
 - name: Change ssh login port
   lineinfile:
     path: /etc/ssh/sshd_config
