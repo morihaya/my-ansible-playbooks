@@ -6,3 +6,11 @@
   notify:
     - restart sshd
 
+- name: Change ssh login port
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^Port'
+    line: 'Port {{ ssh_port }}'
+  notify:
+    - restart sshd
+
