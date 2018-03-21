@@ -4,6 +4,6 @@
     - common/commons
     - common/install_ansible
   vars_files:
-    - cloudgrage/vars.yml
+    - env-cloudgrage/vars.yml
 
 
