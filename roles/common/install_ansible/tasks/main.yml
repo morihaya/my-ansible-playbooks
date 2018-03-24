@@ -1,7 +1,3 @@
-- name: Update all packages to the latest version
-  apt:
-    upgrade: dist
-
 - name: Install software-properties-common
   apt:
     name: software-properties-common
@@ -11,11 +7,8 @@
   apt_repository:
     repo: 'ppa:ansible/ansible'
 
-- name: Update all packages to the latest version
-  apt:
-    upgrade: dist
-
 - name: Install ansible
   apt:
     name: ansible
     state: present
+    update_cache: yes
