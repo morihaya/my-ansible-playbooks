@@ -5,6 +5,7 @@
 #   - common/install_ansible
 #   - common/install_digdag
 #   - common/install_embulk
-   - common/install_fish
+#   - common/install_fish
+   - common/install_golang
 
 
