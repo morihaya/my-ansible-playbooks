@@ -1,0 +1,37 @@
+- name: Install golang
+  apt:
+    name: golang-go
+    state: present
+
+- name: Set GOPATH
+  lineinfile:
+    path: "{{ ansible_user_dir }}/.profile"
+    line: "{{ item }}"
+  with_items:
+    - 'export GOPATH={{ GOPATH }}'
+    - 'export PATH=${PATH}:{{ GOPATH }}/bin'
+
+- name: Create GOPATH dir
+  file:
+    path: '{{ GOPATH }}'
+    state: directory
+    mode: 0755
+
+- name: Check exit ghq command
+  shell: bash -lc 'type ghq'
+  register: exist_command
+  failed_when: false
+  changed_when: False
+
+- debug: msg="{{ exist_command.stdout }}"
+
+- name: Install ghq
+  shell: bash -lc 'go get github.com/motemen/ghq'
+  when: exist_command.rc != 0
+
+- name: Print ghq version
+  shell: bash -lc 'ghq --version'
+  register: command_version
+  changed_when: False
+
+- debug: msg={{ command_version.stdout }}
