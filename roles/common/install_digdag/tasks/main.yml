@@ -1,0 +1,10 @@
+- name: Install openjdk-8
+  apt:
+    name: openjdk-8-jre
+    state: present
+
+- name: Install digdag
+  get_url:
+    url: https://dl.digdag.io/digdag-latest
+    dest: /usr/local/bin/digdag
+    mode: 0755
