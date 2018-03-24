@@ -1,0 +1,10 @@
+- name: Install openjdk-8
+  apt:
+    name: openjdk-8-jre
+    state: present
+
+- name: Install embulk
+  get_url:
+    url: https://dl.embulk.org/embulk-latest.jar
+    dest: /usr/local/bin/embulk
+    mode: 0755
