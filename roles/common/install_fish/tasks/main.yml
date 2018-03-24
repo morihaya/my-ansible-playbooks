@@ -1,0 +1,26 @@
+- name: Add apt-add-repository
+  apt_repository:
+    repo: 'ppa:fish-shell/release-2'
+
+- name: Install fish
+  apt:
+    name: fish
+    state: present
+    update_cache: yes
+
+- name: Create fisherman's dir
+  file:
+    path: "{{ ansible_user_dir }}/.config/fish/functions/"
+    state: directory
+    
+- name: Install fisherman
+  get_url:
+    url: https://git.io/fisher
+    dest: "{{ ansible_user_dir }}/.config/fish/functions/fisher.fish"
+    mode: 0644
+
+- name: Install fish plugins
+  shell: fisher z fzf done edc/bass omf/thefuck omf/theme-bobthefish done 0rax/fish-bd edc/bass omf/thefuck omf/theme-bobthefish
+  args:
+    executable: /usr/bin/fish
+
