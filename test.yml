@@ -1,5 +1,10 @@
 - hosts: localhost
   roles:
-#    - monitoring/install_netdata
-    - common/commons
-    - common/install_ansible
+#   - monitoring/install_netdata
+#   - common/commons
+#   - common/install_ansible
+#   - common/install_digdag
+#   - common/install_embulk
+   - common/install_fish
+
+
