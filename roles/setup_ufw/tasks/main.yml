@@ -1,0 +1,21 @@
+- name: Install ufw
+  apt: 
+    name: ufw
+    state: present
+
+- name: Start ufw service
+  service:
+    name: ufw
+    state: started
+    enabled: yes
+
+- name: allow ssh
+  ufw:
+    rule: allow
+    to_port: 6122
+    state: enabled
+
+- name: allow some port for me
+  ufw:
+    rule: allow
+    src: "{{ my_gip }}"

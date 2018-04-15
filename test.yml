@@ -7,6 +7,6 @@
 #   - install_embulk
 #   - install_fish
 #   - install_golang
-   - install_docker-ce
-
+#   - install_docker-ce
+   - setup_ufw
 
