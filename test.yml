@@ -6,6 +6,7 @@
 #   - install_digdag
 #   - install_embulk
 #   - install_fish
-   - install_golang
+#   - install_golang
+   - install_docker-ce
 
 
