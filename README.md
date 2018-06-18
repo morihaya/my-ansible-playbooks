@@ -1,15 +1,19 @@
 # This is my ansible playbooks
 
 ## Setup commands
+
+```
 sudo apt update && sudo apt upgrade
 
-pip install --upgrade pip
-pip install ansible
+sudo pip install --upgrade pip
+sudo pip install ansible
 
-ssh-keygen
+sudo ssh-keygen
 
-cat ~/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
+sudo cat ~/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 
+sudo mkdir /etc/ansible
 cd /etc/ansible
- git clone https://github.com/morihaya/my-ansible-playbooks.git
 
+sudo git clone https://github.com/morihaya/my-ansible-playbooks.git
+```
